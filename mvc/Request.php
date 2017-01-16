@@ -58,7 +58,7 @@ class Request{
   public function getPath() {
 
     //Base URL 획득 : 리퀘스트된 URL에서 호스트부분에서 Front Controller까지의 경로
-    $base_url = $this->getBaseUrl();  
+    $base_url = $this->getBaseUrl();
 
     //리퀘스트된 URL에서 호스트 부분의 뒷부분 모두 다 획득
     $requestUri = $this->getRequestUri();

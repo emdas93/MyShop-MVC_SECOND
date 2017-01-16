@@ -20,19 +20,19 @@ class AccountController extends Controller{
   }
   public function registerAction(){//signup.php내의 form태그 action에서의 설정
     //1>POST 전송박식으로 전달 받은 데이터에 대한 체크
-    if($this->_request->ispost()){
+    if(!$this->_request->isPost()){
       $this->httpNotFound(); //FileNotFoundException 예외객체를 생성
     }
     if($this->_session->isAuthenticated()){
       $this->redirect('/account');
     }
     //2>CSRF대책의 Token 체크
-    $token = $this->_request->getpost('_token');
+    $token = $this->_request->getPost('_token');
     if(!$this->checkToken(self::SIGNUP, $token)){
       return $this->redirect('/'.self::SIGNUP);
     }
     //3>POST 전송방식으로 전달 받은 데이터를 변수에 저장
-    $user_name = $this->_request->getpost('user-name');
+    $user_name = $this->_request->getPost('user-name');
     $password = $this->_request->getPost('password');
 
     $errors = array();

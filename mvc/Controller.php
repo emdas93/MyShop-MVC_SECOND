@@ -104,7 +104,7 @@
     //Action method 에서 render()호추시 파라메타 전달을 위해 실행
     protected function getToken($form){
       $key = 'token/'.$form; //$_SESSION변수에서 token을 읽어옴
-      $tokens = $this->_session->get($key, array()); // $_SESSION 변수에서 Token을 읽어옴
+      $tokens[] = $this->_session->get($key, array()); // $_SESSION 변수에서 Token을 읽어옴
       if(count($tokens)>=10){ //토큰의 수가 10개를 넘지 않도록 조절
         array_shift($tokens);
         //http://php.net/manual/kr/function.array-shift.php

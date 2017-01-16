@@ -45,6 +45,7 @@
 		public function escape($string){
 			//특수문자를 HTML 엔티티로 변경
 			//ENT_QUOTES 설정되면 ':&#039;값'
+			var_dump(htmlspecialchars($string,ENT_QUOTES,'UTF-8'));
 			return htmlspecialchars($string,ENT_QUOTES,'UTF-8');
 		}
 	}

@@ -197,7 +197,7 @@ abstract class AppBase{//계승을 전제로 하는 클래스로 abstract클래�
 
   // ***getControllerDorectory() ***
   public function getControllerDirectory(){
-    return $this->getRootDirectory().self::CONTROLLERSDIR;
+    return $this->getRootDirectory().self::CONTROLLERDIR;
   }
 }
 ?>
